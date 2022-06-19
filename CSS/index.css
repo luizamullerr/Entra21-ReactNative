@@ -1,0 +1,31 @@
+* {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+iframe {
+    width: 99vw;
+    height: 100vw;
+}
+
+nav {
+    background-color: black;
+    padding: 15px;
+    justify-content: center;
+    display: flex;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    border-radius: 12px;
+    padding: 10px;
+}
+
+a:hover {
+    text-decoration: none;
+    color: black;
+    background-color: white;
+    border-radius: 12px;
+    padding: 10px;
+}
