@@ -23,6 +23,7 @@
     </div>
 
 </body>
+
 <script>
     function salvar() {
         const cliente = {
@@ -49,6 +50,21 @@
         } else {
             cliente.fone = document.getElementById("fone").value
         }
+
+        const options = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(cliente)
+        }
+        fetch("http://localhost:3000/cliente", options)
+            .then(data => data.json())
+            .then(cli => limpar())
+    }
+
+    function limpar() {
+        document.getElementById("nome").value = ""
+        document.getElementById("email").value = ""
+        document.getElementById("fone").value = ""
     }
 </script>
 
