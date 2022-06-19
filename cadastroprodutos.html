@@ -11,15 +11,45 @@
 <body>
     <h1>Cadastrar produtos</h1>
     <div>
-        <label for="descricao">Nome do produto: </label>
-        <input type="text" id="descricao" placeholder="Informe o produto" />
+        <label for="nome">Nome do produto: </label>
+        <input type="text" id="nome" placeholder="Informe o produto" />
         <label for="qtd">Quantidade: </label>
         <input type="text" id="qtd" placeholder="Informe a quantidade" />
         <label for="preco">Preço de venda: </label>
         <input type="text" id="preco" placeholder="Informe o valor" />
         <button onclick="salvar()">Salvar</button>
-        <button onclick="Limpar()">Limpar</button>
+        <button onclick="limpar()">Limpar</button>
     </div>
 </body>
+<script>
+    function salvar(){
+        const produtos = {
+            nome: "",
+            qtd: "",
+            preco: ""
+        }
+        if (document.getElementById("nome").value == ''){
+            alert ("Informe o nome do produto!")
+            document.getElementById("nome").focus()
+            return
+        }else{
+            produtos.nome = document.getElementById("nome").value
+        }
+        if (document.getElementById("qtd").value == ''){
+            alert ("Informe a quantidade do produto!")
+            document.getElementById("qtd").focus()
+            return
+        }else{
+            produtos.nome = document.getElementById("qtd").value
+        }
+        if (document.getElementById("preco").value == ''){
+            alert ("Informe o preço do produto!")
+            document.getElementById("preco").focus()
+            return
+        }else{
+            produtos.nome = document.getElementById("preco").value
+        }
+    }
+</script>
 
 </html>
