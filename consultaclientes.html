@@ -31,6 +31,8 @@
         </tbody>
     </table>
     <div id="formAlterar">
+        <label>ID do Cliente: </label>
+        <input type="text" id="idcliente"/>
         <label>Nome do Cliente: </label>
         <input type="text" id="nome"/>
         <label>E-mail do Cliente: </label>
@@ -64,6 +66,18 @@
             method: 'DELETE' })
             .then(data => data.json())
             .then(cli => alert('Cliente excluido com sucesso!'))
+    }
+
+    function selecionaItem(item){
+        document.getElementById("formAlterar").style.display = 'block'
+        document.getElementById("idcliente").value = item
+        fetch (`http://localhost:3000/cliente/${item}`)
+        .then(data => data.json())
+        .then(result => {
+            document.getElementById("nome").value = result.nome
+            document.getElementById("email").value = result.email
+            document.getElementById("fone").value = result.fone
+        })
     }
 </script>
 
