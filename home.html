@@ -36,6 +36,24 @@
                     document.getElementById("fonecliente").value = result.fone
                 })
         }
+        function alterar() {
+            if (document.getElementById("nomecliente").value == "") {
+                alert("Informe o nome")
+                document.getElementById("nomecliente").focus()
+                return
+            }
+            if (document.getElementById("emailcliente").value == "") {
+                alert("Informe o email")
+                document.getElementById("emailcliente").focus()
+                return
+            }           
+             if (document.getElementById("fonecliente").value == "") {
+                alert("Informe o telefone")
+                document.getElementById("fonecliente").focus()
+                return
+            }
+
+
 
     </script>
 </body>
