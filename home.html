@@ -46,12 +46,42 @@
                 alert("Informe o email")
                 document.getElementById("emailcliente").focus()
                 return
-            }           
-             if (document.getElementById("fonecliente").value == "") {
+            }
+            if (document.getElementById("fonecliente").value == "") {
                 alert("Informe o telefone")
                 document.getElementById("fonecliente").focus()
                 return
             }
+            const cliente = {
+                nome: "",
+                email: "",
+                fone: ""
+            }
+
+            cliente.nome = document.getElementById("nomecliente").value
+            cliente.email = document.getElementById("emailcliente").value
+            cliente.fone = document.getElementById("fonecliente").value
+
+            const options = {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(cliente)
+            }
+            var idpesquisa = document.getElementById("idcliente").value
+            fetch(`http://localhost:3000/cliente/${idpesquisa}`, options)
+                .then(data => data.json())
+                .then(cli => alert('Cliente alterado com sucesso'))
+
+            limpar()
+
+        }
+
+        function limpar() {
+            document.getElementById("nomecliente").value = ""
+            document.getElementById("emailcliente").value = ""
+            document.getElementById("fonecliente").value = ""
+        }
+
 
 
 
