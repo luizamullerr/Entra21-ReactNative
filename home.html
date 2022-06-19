@@ -9,7 +9,35 @@
 </head>
 
 <body>
-    <h1>HOME</h1>
+    <h1>Início</h1>
+    <label>Digite o Código do Cliente</label>
+    <input type="number" id="idcliente" />
+    <button onclick="pesquisar()">Pesquisar</button>
+    <button onclick="excluir()">Excluir</button>
+
+    <hr>
+
+    <label>Nome do Cliente:</label>
+    <input type="text" id="nomecliente" />
+    <label>E-mail:</label>
+    <input type="text" id="emailcliente" />
+    <label>Telefone:</label>
+    <input type="text" id="fonecliente" />
+    <button onclick="alterar()">Alterar</button>
+
+    <script>
+        function pesquisar() {
+            var idpesquisa = document.getElementById("idcliente").value
+            fetch(`http://localhost:3000/cliente/${idpesquisa}`)
+                .then(data => data.json())
+                .then(result => {
+                    document.getElementById("nomecliente").value = result.nome
+                    document.getElementById("emailcliente").value = result.email
+                    document.getElementById("fonecliente").value = result.fone
+                })
+        }
+
+    </script>
 </body>
 
 </html>
