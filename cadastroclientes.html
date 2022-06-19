@@ -21,7 +21,35 @@
         <button onclick="salvar()">Salvar</button>
         <button onclick="Limpar()">Limpar</button>
     </div>
-    
+
 </body>
+<script>
+    function salvar() {
+        const cliente = {
+            nome: "",
+            email: "",
+            fone: ""
+        }
+        if (document.getElementById("nome").value == '') {
+            alert("É necessário informar o nome!")
+            document.getElementById("nome").focus()
+            return
+        } else {
+            cliente.nome = document.getElementById("nome").value
+        } if (document.getElementById("email").value == '') {
+            alert("É necessário informar o E-mail!")
+            document.getElementById("email").focus()
+            return
+        } else {
+            cliente.email = document.getElementById("email").value
+        } if (document.getElementById("fone").value == '') {
+            alert("É necessário informar o Telefone!")
+            document.getElementById("fone").focus()
+            return
+        } else {
+            cliente.fone = document.getElementById("fone").value
+        }
+    }
+</script>
 
 </html>
