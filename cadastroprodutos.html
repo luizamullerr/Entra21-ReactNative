@@ -22,33 +22,47 @@
     </div>
 </body>
 <script>
-    function salvar(){
+    function salvar() {
         const produtos = {
             nome: "",
             qtd: "",
             preco: ""
         }
-        if (document.getElementById("nome").value == ''){
-            alert ("Informe o nome do produto!")
+        if (document.getElementById("nome").value == '') {
+            alert("Informe o nome do produto!")
             document.getElementById("nome").focus()
             return
-        }else{
+        } else {
             produtos.nome = document.getElementById("nome").value
         }
-        if (document.getElementById("qtd").value == ''){
-            alert ("Informe a quantidade do produto!")
+        if (document.getElementById("qtd").value == '') {
+            alert("Informe a quantidade do produto!")
             document.getElementById("qtd").focus()
             return
-        }else{
+        } else {
             produtos.nome = document.getElementById("qtd").value
         }
-        if (document.getElementById("preco").value == ''){
-            alert ("Informe o preço do produto!")
+        if (document.getElementById("preco").value == '') {
+            alert("Informe o preço do produto!")
             document.getElementById("preco").focus()
             return
-        }else{
+        } else {
             produtos.nome = document.getElementById("preco").value
         }
+
+        const options = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(produtos)
+        }
+        fetch("http://localhost:3000/produtos", options)
+            .then(data => data.json())
+            .then(prod => limpar())
+    }
+    function limpar() {
+        document.getElementById("nome").value = ""
+        document.getElementById("qtd").value = ""
+        document.getElementById("preco").value = ""
     }
 </script>
 
