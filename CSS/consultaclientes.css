@@ -8,7 +8,9 @@ table {
     padding: 20px;
     border-style: solid;
     border-radius: 35px;
+    border-color: black;
     border-top: none;
+    border-bottom: none;
     justify-content: center;
     margin: auto;
     align-items: center;
@@ -48,7 +50,9 @@ button:hover {
     display: none;
     border-style: solid;
     border-radius: 35px;
+    border-color: black;
     border-top: none;
+    border-bottom: none;
     width: 230px;
     justify-content: center;
     align-items: center;
