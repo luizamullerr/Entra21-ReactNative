@@ -1,5 +1,18 @@
 {
-    "cliente":[],
-    
-    "produtos":[]
+  "cliente": [
+    {
+      "nome": "LUIZA ",
+      "email": "luuiza.mullerr@gmail.com",
+      "fone": "47991424599",
+      "id": 1
+    }
+  ],
+  "produtos": [
+    {
+      "nome": "pao",
+      "qtd": "2",
+      "preco": "3.50",
+      "id": 1
+    }
+  ]
 }

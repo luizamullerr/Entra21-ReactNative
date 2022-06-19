@@ -54,8 +54,8 @@
                     linha += `<td> ${lista[i].nome} </td>`
                     linha += `<td> ${lista[i].email} </td>`
                     linha += `<td> ${lista[i].fone} </td>`
-                    linha += `<td> <button onclick=excluir (${lista[i].id})>Excluir</td>`
-                    linha += `<td> <button onclick=selecionaItem (${lista[i].id})>Alterar</td>`
+                    linha += `<td> <button onclick=excluir(${lista[i].id})>Excluir</td>`
+                    linha += `<td> <button onclick=selecionaItem(${lista[i].id})>Alterar</td>`
                     linha += '</tr>'
                 }
                 document.getElementsByTagName("tbody")[0].innerHTML = linha

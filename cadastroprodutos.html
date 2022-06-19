@@ -15,7 +15,7 @@
         <input type="text" id="nome" placeholder="Informe o produto" />
         <label for="qtd">Quantidade: </label>
         <input type="text" id="qtd" placeholder="Informe a quantidade" />
-        <label for="preco">Preço de venda: </label>
+        <label for="preco">Preço de Venda: </label>
         <input type="text" id="preco" placeholder="Informe o valor" />
         <button onclick="salvar()">Salvar</button>
         <button onclick="limpar()">Limpar</button>
@@ -40,14 +40,14 @@
             document.getElementById("qtd").focus()
             return
         } else {
-            produtos.nome = document.getElementById("qtd").value
+            produtos.qtd = document.getElementById("qtd").value
         }
         if (document.getElementById("preco").value == '') {
             alert("Informe o preço do produto!")
             document.getElementById("preco").focus()
             return
         } else {
-            produtos.nome = document.getElementById("preco").value
+            produtos.preco = document.getElementById("preco").value
         }
 
         const options = {
