@@ -73,7 +73,6 @@
                 .then(cli => alert('Cliente alterado com sucesso'))
 
             limpar()
-
         }
 
         function limpar() {
@@ -82,9 +81,14 @@
             document.getElementById("fonecliente").value = ""
         }
 
+        function excluir() {
+            var idpesquisa = document.getElementById("idcliente").value
+            fetch(`http://localhost:3000/cliente/${idpesquisa}`, { method: 'DELETE' })
+                .then(data => data.json())
+                .then(cli => alert('Cliente excluido com sucesso'))
 
-
-
+            limpar()
+        }
     </script>
 </body>
 
